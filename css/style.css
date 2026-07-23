@@ -90,7 +90,7 @@ justify-content:space-between;
 
 align-items:center;
 
-padding:18px 25px;
+padding:10px 18px;
 
 }
 
@@ -108,13 +108,11 @@ color:var(--primary);
 
 /* MENU */
 
-.nav-menu{
+.nav-menu a{
 
-display:flex;
+font-size:14px;
 
-list-style:none;
-
-gap:30px;
+padding:10px 8px;
 
 }
 
@@ -154,9 +152,9 @@ cursor:pointer;
 
 section{
 
-min-height:100vh;
+padding:82px 0;
 
-padding:120px 10%;
+min-height:auto;
 
 }
 
@@ -240,7 +238,7 @@ margin-bottom:10px;
 
 .hero-title{
 
-font-size:60px;
+font-size:42px;
 
 font-weight:800;
 
