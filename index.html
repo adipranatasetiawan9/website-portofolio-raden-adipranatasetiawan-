@@ -24,13 +24,18 @@
 
 <body>
 
+<div id="preloader">
+    <div class="loader"></div>
+    <h2>Loading Portfolio...</h2>
+</div>
+
 <header id="header">
 
 <nav class="navbar">
 
 <a href="#home" class="logo">
 
-<span>RAPS</span>
+<span>RADEN</span>
 
 </a>
 
@@ -52,33 +57,37 @@
 
 </ul>
 
-<div class="hamburger">
+</ul>
 
-<span></span>
-
-<span></span>
-
-<span></span>
-
-</div>
-
-</nav>
+<div class="nav-right">
 
 <button id="themeToggle" class="theme-toggle">
 🌙
 </button>
 
-<div class="menu-toggle">
-
-☰
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
 
 </div>
+
+</nav>
 
 </header>
 
 <main>
 
 <section id="home" class="hero">
+
+<div class="container hero-container">
+
+<div class="hero-image">
+
+<img src="images/profile.jpg" alt="Profile">
+
+</div>
 
 <div class="hero-content">
 
@@ -91,7 +100,9 @@ Raden Adi Pranata Setiawan
 </h1>
 
 <h2 class="hero-job">
-Informatics Engineering Student
+
+<span id="typing"></span>
+
 </h2>
 
 <p class="hero-description">
@@ -111,7 +122,7 @@ and Modern Technology.
 
 <div class="stat-card">
 
-<h2>5+</h2>
+<h2 class="counter" data-target="5">0</h2>
 
 <p>Projects</p>
 
@@ -119,7 +130,7 @@ and Modern Technology.
 
 <div class="stat-card">
 
-<h2>6+</h2>
+<h2 class="counter" data-target="6">0</h2>
 
 <p>Technologies</p>
 
@@ -127,7 +138,7 @@ and Modern Technology.
 
 <div class="stat-card">
 
-<h2>100%</h2>
+<h2 class="counter" data-target="100">0</h2>
 
 <p>Learning Spirit</p>
 
@@ -147,6 +158,18 @@ class="btn-secondary">
 Download CV
 
 </a>
+
+<div class="hero-social">
+
+<a href="https://github.com/adipranatasetiawan9" target="_blank">
+GitHub
+</a>
+
+<a href="mailto:adipranatasetiawan9@gmail.com">
+Email
+</a>
+
+</div>
 
 </div>
 

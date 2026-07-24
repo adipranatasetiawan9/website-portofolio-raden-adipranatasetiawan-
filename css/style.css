@@ -278,14 +278,13 @@ margin-bottom:40px;
 
 .hero-buttons{
 
+.hero-buttons{
 display:flex;
-
 justify-content:center;
-
-gap:20px;
-
+align-items:center;
+gap:18px;
+margin-top:35px;
 flex-wrap:wrap;
-
 }
 
 .btn-primary{
@@ -306,38 +305,10 @@ transition:.3s;
 
 }
 
-.btn-primary:hover{
-
-transform:translateY(-4px);
-
-background:#1d4ed8;
-
-}
-
+.btn-primary,
 .btn-secondary{
-
-border:2px solid #2563eb;
-
-padding:15px 35px;
-
-border-radius:10px;
-
-text-decoration:none;
-
-font-weight:600;
-
-color:#2563eb;
-
-transition:.3s;
-
-}
-
-.btn-secondary:hover{
-
-background:#2563eb;
-
-color:white;
-
+min-width:180px;
+text-align:center;
 }
 
 @media(max-width:768px){
@@ -1341,30 +1312,47 @@ color:var(--gray);
 ========================== */
 
 .theme-toggle{
-
-width:48px;
-
-height:48px;
-
+position:absolute;
+right:70px;
+top:12px;
+width:42px;
+height:42px;
 border:none;
-
 border-radius:50%;
-
-cursor:pointer;
-
-font-size:20px;
-
 background:#2563eb;
-
-color:white;
-
+color:#fff;
+cursor:pointer;
+font-size:18px;
+display:flex;
+justify-content:center;
+align-items:center;
 transition:.3s;
-
+z-index:1001;
 }
 
 .theme-toggle:hover{
+transform:scale(1.1);
+}
 
-transform:rotate(20deg) scale(1.08);
+.menu-toggle{
+position:absolute;
+right:15px;
+top:10px;
+font-size:30px;
+cursor:pointer;
+display:none;
+}
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.theme-toggle{
+right:60px;
+top:10px;
+}
 
 }
 
@@ -1373,35 +1361,47 @@ transform:rotate(20deg) scale(1.08);
 ========================== */
 
 body.dark{
-
 background:#0f172a;
+color:#f8fafc;
+}
 
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4{
+color:#ffffff;
+}
+
+body.dark p,
+body.dark span,
+body.dark li,
+body.dark a{
 color:#e2e8f0;
-
 }
 
-body.dark section{
-
-background:#1e293b;
-
+body.dark .section-title{
+color:#ffffff;
 }
 
-body.dark .project-card,
-body.dark .skill-card,
-body.dark .certificate-card,
-body.dark .contact-card,
-body.dark .timeline-item{
+body.dark .section-subtitle{
+color:#cbd5e1;
+}
 
+body.dark .hero-job{
+color:#ffffff;
+}
+
+body.dark .hero-description{
+color:#cbd5e1;
+}
+
+body.dark .stat-card{
 background:#334155;
-
-color:#f1f5f9;
-
 }
 
-body.dark footer{
-
-background:#020617;
-
+body.dark .developer-card{
+background:#334155;
+color:#fff;
 }
 
 /* ==========================
@@ -1689,5 +1689,552 @@ color:#e2e8f0;
 body.dark .timeline-item::before{
 
 border-color:#1e293b;
+
+}
+
+/* ======================================
+   MOBILE NAVBAR PROFESSIONAL V6
+====================================== */
+
+@media (max-width:768px){
+
+.navbar{
+position:relative;
+padding:14px 16px;
+}
+
+.nav-menu{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#ffffff;
+display:none;
+flex-direction:column;
+padding:20px;
+box-shadow:0 15px 30px rgba(0,0,0,.12);
+border-radius:0 0 15px 15px;
+z-index:999;
+}
+
+.nav-menu.active{
+display:flex;
+animation:slideMenu .35s ease;
+}
+
+.nav-menu li{
+list-style:none;
+margin:12px 0;
+}
+
+.nav-menu a{
+display:block;
+font-size:17px;
+padding:10px;
+border-radius:8px;
+}
+
+.nav-menu a:hover{
+background:#eff6ff;
+}
+
+body.dark .nav-menu{
+background:#1e293b;
+}
+
+body.dark .nav-menu a{
+color:#ffffff;
+}
+
+body.dark .nav-menu a:hover{
+background:#334155;
+}
+
+}
+
+@keyframes slideMenu{
+
+from{
+opacity:0;
+transform:translateY(-15px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ======================================
+   GLASSMORPHISM CARD EFFECT
+====================================== */
+
+.stat-card,
+.skill-card,
+.project-card,
+.developer-card,
+.certificate-card,
+.contact-card,
+.info-card{
+
+transition:.35s;
+
+}
+
+.stat-card:hover,
+.skill-card:hover,
+.project-card:hover,
+.developer-card:hover,
+.certificate-card:hover,
+.contact-card:hover,
+.info-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 25px 50px rgba(37,99,235,.18);
+
+}
+
+/* ======================================
+   HERO SECTION V6.1
+====================================== */
+
+.hero-content{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.hero-stats{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin:40px 0;
+}
+
+.stat-card{
+    width:180px;
+    padding:25px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:18px;
+    margin-top:25px;
+}
+
+.hero-buttons a{
+    min-width:180px;
+    text-align:center;
+}
+
+@media(max-width:768px){
+
+.hero-stats{
+    flex-direction:column;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.hero-buttons a{
+    width:100%;
+}
+
+}
+
+/* ==========================
+   HERO V6.2
+========================== */
+
+.hero-container{
+
+display:grid;
+
+grid-template-columns:300px 1fr;
+
+align-items:center;
+
+gap:60px;
+
+}
+
+.hero-image{
+
+text-align:center;
+
+}
+
+.hero-image img{
+
+width:260px;
+
+height:260px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:6px solid #2563eb;
+
+box-shadow:0 20px 45px rgba(37,99,235,.25);
+
+}
+
+.hero-social{
+
+margin-top:25px;
+
+display:flex;
+
+gap:15px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.hero-social a{
+
+padding:12px 22px;
+
+background:#2563eb;
+
+color:#fff;
+
+text-decoration:none;
+
+border-radius:10px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.hero-social a:hover{
+
+background:#1d4ed8;
+
+transform:translateY(-3px);
+
+}
+
+@media(max-width:768px){
+
+.hero-container{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-image img{
+
+width:180px;
+
+height:180px;
+
+}
+
+}
+
+/* ==========================
+   PORTFOLIO V6.3 HERO
+========================== */
+
+.hero-container{
+display:grid;
+grid-template-columns:350px 1fr;
+align-items:center;
+gap:60px;
+}
+
+.hero-image{
+text-align:center;
+}
+
+.hero-image img{
+width:320px;
+height:320px;
+object-fit:cover;
+border-radius:50%;
+border:8px solid white;
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+animation:floating 4s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.hero-social{
+display:flex;
+gap:15px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.hero-social a{
+padding:12px 22px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:600;
+transition:.3s;
+}
+
+.hero-social a:hover{
+transform:translateY(-5px);
+background:#1d4ed8;
+}
+
+@media(max-width:768px){
+
+.hero-container{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-image img{
+
+width:220px;
+
+height:220px;
+
+}
+
+}
+
+/* ==========================
+   PORTFOLIO V6.4 NAVBAR
+========================== */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 30px;
+}
+
+.nav-right{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.theme-toggle{
+width:45px;
+height:45px;
+display:flex;
+align-items:center;
+justify-content:center;
+border:none;
+border-radius:50%;
+background:#2563eb;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+.theme-toggle:hover{
+transform:rotate(180deg);
+}
+
+header{
+transition:all .35s ease;
+}
+
+header.scrolled{
+background:rgba(255,255,255,.88);
+backdrop-filter:blur(18px);
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+body.dark header.scrolled{
+background:rgba(15,23,42,.92);
+}
+
+body.dark .nav-menu a{
+color:#f8fafc;
+}
+
+body.dark .hamburger span{
+background:#ffffff;
+}
+
+/* ==========================
+   PORTFOLIO V6.5 BUTTON EFFECT
+========================== */
+
+.btn-primary,
+.btn-secondary{
+position:relative;
+overflow:hidden;
+}
+
+.btn-primary::before,
+.btn-secondary::before{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:100%;
+height:100%;
+background:rgba(255,255,255,.25);
+transform:skewX(-25deg);
+transition:.7s;
+}
+
+.btn-primary:hover::before,
+.btn-secondary:hover::before{
+left:120%;
+}
+
+.btn-primary{
+box-shadow:0 10px 25px rgba(37,99,235,.35);
+}
+
+.btn-secondary{
+box-shadow:0 10px 25px rgba(30,64,175,.20);
+}
+
+/* ==========================
+   PORTFOLIO V6.7 TYPING
+========================== */
+
+.hero-job{
+
+min-height:45px;
+
+font-size:28px;
+
+font-weight:700;
+
+color:var(--primary);
+
+}
+
+#typing{
+
+border-right:3px solid #2563eb;
+
+padding-right:6px;
+
+animation:cursor .7s infinite;
+
+}
+
+@keyframes cursor{
+
+0%{
+border-color:#2563eb;
+}
+
+50%{
+border-color:transparent;
+}
+
+100%{
+border-color:#2563eb;
+}
+
+}
+
+/* ==========================
+   PORTFOLIO V6.8 SKILL ANIMATION
+========================== */
+
+.progress-bar{
+    width:0;
+    transition:width 1.8s ease;
+}
+
+/* ==========================
+   PORTFOLIO V6.9 ACTIVE NAVBAR
+========================== */
+
+.nav-menu a.active{
+
+color:#2563eb;
+font-weight:700;
+
+}
+
+.nav-menu a.active::after{
+
+width:100%;
+
+}
+
+/* ==========================
+   PORTFOLIO V7.0 PRELOADER
+========================== */
+
+#preloader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#0f172a;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:99999;
+transition:opacity .6s ease;
+}
+
+.loader{
+width:70px;
+height:70px;
+border:6px solid rgba(255,255,255,.2);
+border-top:6px solid #2563eb;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+#preloader h2{
+margin-top:25px;
+color:white;
+font-size:22px;
+font-weight:600;
+}
+
+@keyframes spin{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
 
 }

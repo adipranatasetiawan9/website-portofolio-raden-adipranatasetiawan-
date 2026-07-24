@@ -231,3 +231,211 @@ certificateObserver.observe(card);
 
 });
 
+// ==========================
+// Counter Animation V6.6
+// ==========================
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+const counter = entry.target;
+const target = +counter.dataset.target;
+
+let count = 0;
+
+const update = () => {
+
+const increment = Math.max(1, Math.ceil(target / 40));
+
+if(count < target){
+
+count += increment;
+
+if(count > target) count = target;
+
+counter.textContent = count;
+
+requestAnimationFrame(update);
+
+}else{
+
+counter.textContent = target;
+
+if(target === 100){
+
+counter.textContent = "100%";
+
+}else{
+
+counter.textContent = target + "+";
+
+}
+
+}
+
+};
+
+update();
+
+counterObserver.unobserve(counter);
+
+}
+
+});
+
+});
+
+counters.forEach(counter => {
+
+counterObserver.observe(counter);
+
+});
+
+// ==========================
+// Portfolio V6.7 Typing Animation
+// ==========================
+
+const typing = document.getElementById("typing");
+
+if (typing) {
+
+const words = [
+"Informatics Engineering Student",
+"Software Developer",
+"Python Programmer",
+"Web Developer",
+"AI Enthusiast"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+
+const current = words[wordIndex];
+
+if (!deleting) {
+
+typing.textContent = current.substring(0, charIndex++);
+if (charIndex > current.length) {
+deleting = true;
+setTimeout(typeEffect, 1500);
+return;
+}
+
+} else {
+
+typing.textContent = current.substring(0, charIndex--);
+if (charIndex < 0) {
+deleting = false;
+wordIndex = (wordIndex + 1) % words.length;
+}
+
+}
+
+setTimeout(typeEffect, deleting ? 50 : 100);
+
+}
+
+typeEffect();
+
+}
+
+// ==========================
+// Portfolio V6.8 Skill Animation
+// ==========================
+
+const skillsSection = document.querySelector(".skills");
+
+if (skillsSection) {
+
+const skillObserver = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+document.querySelector(".html").style.width="90%";
+document.querySelector(".css").style.width="85%";
+document.querySelector(".js").style.width="75%";
+document.querySelector(".python").style.width="88%";
+document.querySelector(".mysql").style.width="80%";
+document.querySelector(".git").style.width="78%";
+
+}
+
+});
+
+});
+
+skillObserver.observe(skillsSection);
+
+}
+
+// ==========================
+// Portfolio V6.9 Active Navbar
+// ==========================
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-menu a");
+
+window.addEventListener("scroll", () => {
+
+let current = "";
+
+sections.forEach(section => {
+
+const sectionTop = section.offsetTop - 120;
+const sectionHeight = section.clientHeight;
+
+if (window.scrollY >= sectionTop &&
+    window.scrollY < sectionTop + sectionHeight) {
+
+current = section.getAttribute("id");
+
+}
+
+});
+
+navLinks.forEach(link => {
+
+link.classList.remove("active");
+
+if (link.getAttribute("href") === "#" + current) {
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+
+// ==========================
+// Portfolio V7.0 Preloader
+// ==========================
+
+window.addEventListener("load", () => {
+
+const preloader = document.getElementById("preloader");
+
+if(preloader){
+
+preloader.style.opacity = "0";
+
+setTimeout(() => {
+
+preloader.style.display = "none";
+
+},600);
+
+}
+
+});
+
